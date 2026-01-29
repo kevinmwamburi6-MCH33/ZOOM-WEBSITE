@@ -1,0 +1,184 @@
+style.css (Dark Mode • Animations • WhatsApp)
+
+:root {
+  --bg: #f5f5f5;
+  --text: #222;
+  --green: #1b5e20;
+  --card: #ffffff;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --card: #1e1e1e;
+}
+title{
+    text-align: center;
+    text-decoration-color: #25d366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--green);
+}
+
+.logo, nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: var(--green);
+  color: white;
+}
+
+.btn {
+  background: #00c853;
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+.products,
+.order-section,
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* PRODUCTS */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* FORMS */
+.order-form,
+.contact-form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* CONTACT */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-info {
+  display: block;
+  margin-top: 6px;
+  text-align: left;
+  text-decoration-color: #eee;
+
+}
+
+.socials a {
+ text-align: justify;
+  display: block;
+  margin-top: 6px;
+  color: var(--green);
+  text-decoration: none;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* DARK MODE BUTTON */
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+script.js (Dark Mode Logic)
+
+function toggleDark() 
+  document.body.classList.toggle("dark");
+
