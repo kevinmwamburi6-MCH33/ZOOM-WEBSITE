@@ -1,43 +1,117 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | ZOOM</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact | ZOOM</title>
 
+  <style>
+    body {
+      background-color: #414b79;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #f2f8f3;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      color: #0dc04f;
+      margin: 0;
+    }
+
+    nav a {
+      color: #f2f8f3;
+      margin-left: 16px;
+      font-weight: bold;
+      font-size: xx-large;
+      text-decoration: none;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .contact-section,
+    .order-section {
+      padding: 60px 24px;
+    }
+
+    .contact-container,
+    .order-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    form {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #22c55e;
+      color: #020617;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-info p,
+    .socials a {
+      margin: 6px 0;
+      display: block;
+      color: #f2f8f3;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #6b7280;
+      border-top: 1px solid #020617;
+    }
+  </style>
 </head>
+
 <body>
-<style>
-  body{background-color: #414b79;}
-   nav a { color:#f2f8f3; margin-left:16px; font-weight: bold; font-size: larger;font-size: xx-large;}
-    nav a:hover { color:#22c55e; }.hero { padding:80px 24px; text-align:center; }
-  header h1 { font-size: 28px; color:#0dc04f; }
-  footer { text-align:center; padding:32px; color:#6b7280; border-top:1px solid #020617;}
-</style>
-<button class="dark-toggle" onclick="toggleDark(calling)"></button>
+
 <a class="whatsapp" href="https://wa.me/254759146951" target="_blank">💬</a>
 
-<header class="navbar">
+<header>
   <h1>ZOOM</h1>
   <nav>
-    <a href="ZOOM.HTML">Home</a>
+    <a href="ZOOM.html">Home</a>
   </nav>
 </header>
 
-<section class="contact-section fade-in">
-  <h2  style="
-    color: rgb(236, 240, 236);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 60px;
-    text-align: center;
-    text-wrap: inherit;
-    ">Get in Touch</h2>
+<section class="contact-section">
+  <h2 style="font-size:60px; font-family:'Times New Roman';">
+    Get in Touch
+  </h2>
 
   <div class="contact-container">
-    <form class="contact-form">
+    <form onsubmit="submitMessage(event)">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
@@ -47,13 +121,13 @@
     <div class="contact-info">
       <p>Phone: 0759146951</p>
       <p>Email: zoomstore@gmail.com</p>
-      <p>Location:Kenya</p>
+      <p>Location: Kenya</p>
+
+      <h3 style="font-size:30px; font-family:'Times New Roman';">
+        Follow Us
+      </h3>
 
       <div class="socials">
-        <br><p><h3 style="
-    color: rgb(250, 253, 251);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;">Follow Us</h3></p></br>
         <a href="#">Instagram: @zoom</a>
         <a href="#">X (Twitter): @zoom</a>
         <a href="#">Facebook: zoom</a>
@@ -63,10 +137,44 @@
   </div>
 </section>
 
+<section class="order-section">
+  <div class="order-container">
+    <form onsubmit="sendWhatsAppOrder(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <select id="product" required>
+        <option value="">Select Product</option>
+        <option value="Popcorn - KES 200">Popcorn - KES 200</option>
+        <option value="Cookies - KES 150">Cookies - KES 150</option>
+        <option value="Blunts - KES 100">Blunts - KES 100</option>
+      </select>
+
+      <input type="number" id="quantity" placeholder="Quantity" required>
+      <textarea id="notes" placeholder="Delivery Notes"></textarea>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+</section>
+
+
 <footer>
-  <p>© 2026 ZOOM. All Rights Reserved.Zoom.The Reliable Oven Ever.</p>
+  <p>© 2026 ZOOM. All Rights Reserved. ZOOM — The Reliable Oven Ever.</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  function submitMessage(event) {
+    event.preventDefault();
+    alert("Message sent successfully!");
+  }
+
+  function submitOrder(event) {
+    event.preventDefault();
+    alert("Order submitted successfully!");
+  }
+</script>
+
 </body>
 </html>
+ \
