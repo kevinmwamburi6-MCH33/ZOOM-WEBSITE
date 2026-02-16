@@ -169,9 +169,26 @@
     alert("Message sent successfully!");
   }
 
-  function submitOrder(event) {
+  function sendWhatsAppOrder(event) {
     event.preventDefault();
-    alert("Order submitted successfully!");
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const product = document.getElementById("product").value;
+    const quantity = document.getElementById("quantity").value;
+    const notes = document.getElementById("notes").value;
+
+    const message =
+      "New Order from ZOOM Website:%0A%0A" +
+      "Name: " + name + "%0A" +
+      "Phone: " + phone + "%0A" +
+      "Product: " + product + "%0A" +
+      "Quantity: " + quantity + "%0A" +
+      "Notes: " + notes;
+
+    const whatsappURL = "https://wa.me/254759146951?text=" + message;
+
+    window.open(whatsappURL, "_blank");
   }
 </script>
 
